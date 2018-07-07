@@ -1,0 +1,84 @@
+<div class="container">
+    <h2>Formulaire d'inscription</h2>
+    <form #studentForm="ngForm" (submit)="onRegisterStudent(studentForm)">
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" id="name" required [ngModel]="student?.name" name="name" #name="ngModel">
+                    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        Veuillez entrer votre nom
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="surname">Prénom</label>
+                    <input type="text" class="form-control" id="surname" required [ngModel]="student?.surname" name="surname" #surname="ngModel">
+                    <div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">
+                        Veuillez entrer votre prénom
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mail" class="test">Mail</label>
+                    <input type="email" class="form-control" email id="mail" required [ngModel]="student?.mail" name="mail" #mail="ngModel">
+                    <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
+                        Veuillez entrer votre adresse mail
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthday">Date de Naissance</label>
+                    <input type="date" class="form-control" id="birthday" required [ngModel]="student?.birthday" name="birthday" #birthday="ngModel"
+                        min="1980-01-01" max="2017-02-31">
+                    <div [hidden]="birthday.valid || birthday.pristine" class="alert alert-danger">
+                        Veuillez entrer votre date de naissance
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sex">Sexe</label>
+                    <select class="form-control" id="sex" [ngModel]="student?.sex" name="sex">
+                        <option *ngFor="let s of sex" [value]="s">{{s}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm">
+                <!-- Classement des Bus -->
+                <h4>Classement des voeux de bus</h4>
+                <div class="container">
+                    <div class="form-group" required>
+                        <label for="bus1">Premier voeux</label>
+                        <select class="form-control" id="bus1" name="bus1" [ngModel]="student?.bus1">
+                            <option *ngFor="let b of bus" [value]="b">{{b}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" required>
+                        <label for="bus2">Deuxième voeux</label>
+                        <select class="form-control" id="bus2" name="bus2" [ngModel]="student?.bus2">
+                            <option *ngFor="let b of bus" [value]="b">{{b}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" required>
+                        <label for="bus3">Troisième voeux</label>
+                        <select class="form-control" id="bus3" name="bus3" [ngModel]="student?.bus3">
+                            <option *ngFor="let b of bus" [value]="b">{{b}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3 text-center">
+                <div id="submitButton">
+                    <button class="btn btn-primary" stype="submit" [disabled]="!studentForm.form.valid">Je m'inscris</button>
+                </div>
+                <div id="returnButton">
+                    <button class="btn btn-secondary" *ngIf="mode == 'edit'" [routerLink]="['/list']">Retour à la liste des inscrits</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

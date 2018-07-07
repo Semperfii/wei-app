@@ -1,0 +1,21 @@
+@import '../scss/styles.scss';
+
+.navbar {
+  background-color: $color-darkblue;
+  .navbar-item {
+    color: white;
+  }
+  .navbar-link {
+    color: white;
+    background-color: $color-darkblue;
+  }
+  .navbar-dropdown .navbar-item {
+    color: black;
+  }
+  .navbar-dropdown:hover {
+    background-color: white !important;
+  }
+  :hover {
+    background-color: transparent;
+  }
+}

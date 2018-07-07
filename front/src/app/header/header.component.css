@@ -1,0 +1,13 @@
+.navbar {
+  background-color: #374353; }
+  .navbar .navbar-item {
+    color: white; }
+  .navbar .navbar-link {
+    color: white;
+    background-color: #374353; }
+  .navbar .navbar-dropdown .navbar-item {
+    color: black; }
+  .navbar .navbar-dropdown:hover {
+    background-color: white !important; }
+  .navbar :hover {
+    background-color: transparent; }

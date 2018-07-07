@@ -1,0 +1,97 @@
+<!-- <header>
+  <nav class="navbar navbar-dark" style="background-color: #000000">
+    <span>
+      <a class="navbar-brand" routerLink="/">
+        <img src="../../assets/img/logo_wei.png" width="40" height="40" alt=""> </a>
+    </span>
+    <div class="navbar-expand mr-auto">
+      <div class="navbar-nav">
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            1A
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#/form">Inscription</a>
+            <a class="dropdown-item" href="#/list">Inscrits</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            2A
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#/form">Enregistrer le Staff</a>
+            <a class="dropdown-item" href="#/list">Staffeurs</a>
+          </div>
+        </div>
+        <a *ngIf="auth.isLoggedIn()" class="nav-link" routerLink="/chat">
+          Chat
+        </a>
+      </div>
+    </div>
+    <div class="navbar-expand ">
+      <div class="navbar-nav">
+        <a *ngIf="!auth.isLoggedIn()" class="nav-link" routerLink="/login">
+          Login
+        </a>
+        <a *ngIf="auth.isLoggedIn()" class="nav-link" routerLink="/profile">
+          {{ auth.getUserDetails()?.name }}
+        </a>
+        <a *ngIf="auth.isLoggedIn()" (click)="auth.logout()" class="nav-link">
+          Logout
+        </a>
+      </div>
+    </div>
+    <div class="navbar-expand ml-auto navbar-nav">
+      <a class="nav-item nav-link" href="https://fr-fr.facebook.com/WeiCentraleSupelec/" target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </div>
+  </nav>
+</header> -->
+
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" routerLink="/">
+        <img src="../../assets/img/logo_wei.png" width="40" height="40" alt="">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            1A
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" routerLink="/students/form">
+              Inscription
+            </a>
+            <a class="navbar-item" routerLink="/students/list">
+              Liste des inscrits
+            </a>
+          </div>
+        </div>
+        <a class="navbar-item" *ngIf="auth.isLoggedIn()" routerLink="/chat">
+          Chat
+        </a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" *ngIf="!auth.isLoggedIn()" routerLink="/login">
+          Login
+        </a>
+        <a class="navbar-item" *ngIf="auth.isLoggedIn()" routerLink="/profile">
+          {{ auth.getUserDetails()?.name }}
+        </a>
+        <a class="navbar-item" *ngIf="auth.isLoggedIn()" (click)="auth.logout()">
+          Logout
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
